@@ -18,6 +18,10 @@ This project is a reactive REST API built using [Quarkus](https://quarkus.io) to
 - PostgreSQL running with a database `productdb`
 
 ### 2. Database Config
+quarkus.datasource.reactive.url=postgresql://localhost:5432/productdb
+quarkus.datasource.username=postgres
+quarkus.datasource.password=postgres
+quarkus.hibernate-orm.database.generation=drop-and-create
 
 ### 3. API Endpoints
 POST	/products	Create product
@@ -44,3 +48,12 @@ Status code validation
 
 ## Run Project
 ./mvnw compile quarkus:dev
+
+
+## Sample Request (POST /products)
+{
+  "name": "Laptop",
+  "description": "Gaming laptop",
+  "price": 99999.99,
+  "quantity": 10
+}
